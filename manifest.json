@@ -1,0 +1,19 @@
+{
+    "name": "Score Sites",
+    "description": "Scores the sites based on their base URLs.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["tabs", "history", "storage", "scripting", "alarms", "notifications"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon-16.png",
+            "32": "images/icon-32.png",
+            "48": "images/icon-48.png",
+            "128": "images/icon-128.png"
+        }
+    }
+}

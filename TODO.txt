@@ -1,0 +1,24 @@
+= Make the slider into Numerical input. -> Done
+= View Total Score on Startup -> Done
+= Make Update site score button work. -> Done
+= Display correct site score on start. -> Done
+= View Total Score on Site changes -> Done
+= Display correct current site score. -> Done
+= Enter tracking start time and then last stop or export time, and display it in csv. -> Done
+= Make feature to export sites and their score. -> Done
+= Make features to edit sites scores by uploading the excel file. -> RoadMap
+= Using the same excel delete sites which you don't want to store anymore. -> RoadMap
+= In background.js store time in seconds as scores are related -> Done
+= In csv display in minutes format + display website score received -> Done
+= Send notifications on totalScore changes. -> Done
+= Update chrome.runtime.onUpdated track URL changes instead of completion  of loading. -> Done
+= If prevSite = currentSite then skip. -> Done
+= Clear data daily. If score is 0, remove those sites.
+= Make the stop entry when chrome closes.
+= Store goal total score. 
+= Refresh needs to update the totalScore and send a notification.
+= If positive score, then in how much time can I cross goal total score.
+= Estimate that if negative score then in how much time will we have 0 total_score.
+= Make Fabulus UI.
+= Sort entries for excel.
+= Optimize the code, don't fetch from storag everytime.

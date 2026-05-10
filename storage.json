@@ -1,0 +1,17 @@
+{
+    "trackingEnabled": true,
+    "totalScore": 18,
+    "prevSite": "https://www.google.com",
+    "prevTime": 18238173,
+    "visitedSites": {
+        "https://www.google.com": {
+            "score": 2,
+            "time_spent": 2673
+        },
+        "https://www.google2.com": {
+            "score": 2,
+            "time_spent": 3261
+        }
+    },
+    "lostFocusAt": 18238175
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Score Sites</title>
+    <style>
+        body {
+            width: 350px;
+            min-height: 250px;
+            margin: 0;
+            padding: 12px;
+            font-family: Arial, sans-serif;
+            background: #f7f9fc;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .buttons button,
+        .input-row button {
+            flex: 1;
+        }
+
+        .end-button {
+            width: 100px;
+            flex: 0 0 100px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 6px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            background: #e3e8ef;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        button.primary {
+            background: #4caf50;
+            color: white;
+        }
+
+        button.danger {
+            background: #f44336;
+            color: white;
+        }
+
+        button.secondary {
+            background: #2196f3;
+            color: white;
+        }
+
+        img.icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        input {
+            width: 160px;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .small-text {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .value {
+            font-weight: bold;
+        }
+
+        button.primary img,
+        button.danger img,
+        button.secondary img {
+            filter: invert(1) brightness(2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Status -->
+        <div class="card">
+            <div class="row">
+                <div>
+                    <strong>Tracking:</strong>
+                    <span id="status" class="status">Not Initialized</span>
+                </div>
+                <button id="refresh" class="end-button">
+                    <img src="icons/refresh-cw.svg" class="icon"> Refresh
+                </button>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="card buttons">
+            <button id="start" class="primary">
+                <img src="icons/play.svg" class="icon"> Start
+            </button>
+            <button id="stop" class="danger">
+                <img src="icons/square.svg" class="icon"> Stop
+            </button>
+            <button id="export" class="secondary">
+                <img src="icons/download.svg" class="icon"> Export
+            </button>
+            <button id="clear">
+                <img src="icons/trash-2.svg" class="icon"> Clear
+            </button>
+        </div>
+
+        <!-- Scores -->
+        <div class="card">
+            <div class="small-text">Total Score</div>
+            <div id="tot-score-val" class="value">Unknown</div>
+
+            <hr />
+
+            <div class="small-text">Current Site Score (Points / Minute)</div>
+            <div id="score-val" class="value">Unknown</div>
+        </div>
+
+        <!-- Update Score -->
+        <div class="card">
+            <div class="small-text">Update Current Site Score</div>
+
+            <div class="input-row">
+                <input type="number" id="score-input" min="-20" max="10" step="1" value="0" />
+                <button id="score-update">
+                    <img src="icons/square-pen.svg" class="icon"> Update
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
