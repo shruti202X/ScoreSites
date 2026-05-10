@@ -2,7 +2,7 @@
 
 A Chrome Extension for tracking productivity scores on sites.
 
-![Demo](demo.gif)
+![ScoreSites](images/ScoreSites.png)
 
 ## 📌 Features
 
