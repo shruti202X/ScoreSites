@@ -155,8 +155,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
 });
 
-// Triggers when a url change happens or when an click a link opens a new tab.
+// Triggers when a url change happens or when on click a link opens a new tab.
 chrome.tabs.onUpdated.addListener((tabid, changeInfo, tab) => {
+    // TO DO: Use the information of chromes active tab
+    // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if(changeInfo.url){
         chrome.storage.local.get(["trackingEnabled", "visitedSites", "prevTime", "prevSite", "totalScore"], (result) => {
             if(!result.trackingEnabled) return;
@@ -267,7 +269,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
         chrome.storage.local.get(["visitedSites"], (result) =>{
             let visitedSites = result.visitedSites || {};
             const domains = Object.keys(visitedSites);
-            for(const domain in domains){
+            for(const domain of domains){
                 if (visitedSites[domain].score === 0) {
                     delete visitedSites[domain];
                     continue;
